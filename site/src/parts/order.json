@@ -1,0 +1,292 @@
+[
+ {
+  "file": "00-seed.js",
+  "title": "MOCK DATA — Subjects",
+  "lines": 53
+ },
+ {
+  "file": "01-seed.js",
+  "title": "MOCK DATA — Flashcards (per subject)",
+  "lines": 75
+ },
+ {
+  "file": "02-seed.js",
+  "title": "MOCK DATA — Quiz",
+  "lines": 28
+ },
+ {
+  "file": "03-conspect-content.js",
+  "title": "CONSPECT CONTENT (разработени теми)",
+  "lines": 170
+ },
+ {
+  "file": "04-glossary.js",
+  "title": "GLOSSARY — сложни юридически термини с определения При клик показва popup с обяснение.",
+  "lines": 220
+ },
+ {
+  "file": "05-case-studies.js",
+  "title": "CASE STUDIES (разработени казуси)",
+  "lines": 128
+ },
+ {
+  "file": "06-state.js",
+  "title": "STATE — localStorage",
+  "lines": 67
+ },
+ {
+  "file": "07-profili.js",
+  "title": "ПРОФИЛИ — индивидуален прогрес за всеки акаунт (по имейл) Всички лични данни (прогрес, покупки, stre",
+  "lines": 33
+ },
+ {
+  "file": "08-tetradka-na-greshkite.js",
+  "title": "ТЕТРАДКА НА ГРЕШКИТЕ — сбърканите въпроси от тестовете се записват автоматично и могат да се прегова",
+  "lines": 80
+ },
+ {
+  "file": "09-backend-integraciya.js",
+  "title": "BACKEND ИНТЕГРАЦИЯ — автоматично разпознаване. Ако на PA_BACKEND_URL има работещ сървър (GET /health",
+  "lines": 173
+ },
+ {
+  "file": "10-helpers.js",
+  "title": "HELPERS",
+  "lines": 83
+ },
+ {
+  "file": "11-topic-progress-streak-theme.js",
+  "title": "TOPIC PROGRESS / STREAK / THEME",
+  "lines": 60
+ },
+ {
+  "file": "12-srs.js",
+  "title": "SRS — spaced repetition (SM-2-style, Anki-flavored)",
+  "lines": 120
+ },
+ {
+  "file": "13-exam-draw.js",
+  "title": "EXAM DRAW — \"Тегли билет\" simulation",
+  "lines": 28
+ },
+ {
+  "file": "14-data-service.js",
+  "title": "DATA SERVICE — abstraction layer (currently localStorage; swap for backend later)",
+  "lines": 126
+ },
+ {
+  "file": "15-api.js",
+  "title": "API — BACKEND INTEGRATION POINTS -------------------------------------------------------------------",
+  "lines": 170
+ },
+ {
+  "file": "16-feature.js",
+  "title": "FEATURE — VIDEOS per topic Videos are stored in state.videos (admin-editable) and can be YouTube/Vim",
+  "lines": 35
+ },
+ {
+  "file": "17-feature.js",
+  "title": "FEATURE — LEARNING PATH / topic activity progression Per topic tracks which activities are complete.",
+  "lines": 51
+ },
+ {
+  "file": "18-feature.js",
+  "title": "FEATURE — NOTES on conspect",
+  "lines": 38
+ },
+ {
+  "file": "19-feature.js",
+  "title": "FEATURE — GLOBAL SEARCH across all content",
+  "lines": 122
+ },
+ {
+  "file": "20-exam-colloquium-config.js",
+  "title": "EXAM / COLLOQUIUM CONFIG",
+  "lines": 50
+ },
+ {
+  "file": "21-file-uploads.js",
+  "title": "FILE UPLOADS (mock — metadata only)",
+  "lines": 28
+ },
+ {
+  "file": "22-plan-generator.js",
+  "title": "PLAN GENERATOR",
+  "lines": 56
+ },
+ {
+  "file": "23-auth.js",
+  "title": "AUTH",
+  "lines": 3
+ },
+ {
+  "file": "24-lokalni-akaunti.js",
+  "title": "ЛОКАЛНИ АКАУНТИ (демо режим без сървър) Истински пароли: SHA-256 хеш + сол, пазени само в този брауз",
+  "lines": 448
+ },
+ {
+  "file": "25-router.js",
+  "title": "ROUTER",
+  "lines": 120
+ },
+ {
+  "file": "26-content-protection.js",
+  "title": "CONTENT PROTECTION — watermark + anti-copy on protected blocks",
+  "lines": 53
+ },
+ {
+  "file": "27-page.js",
+  "title": "PAGES — Landing",
+  "lines": 201
+ },
+ {
+  "file": "28-page.js",
+  "title": "PAGES — Packages",
+  "lines": 108
+ },
+ {
+  "file": "29-page.js",
+  "title": "PAGES — About / Contact",
+  "lines": 85
+ },
+ {
+  "file": "30-page.js",
+  "title": "PAGES — Login / Register",
+  "lines": 77
+ },
+ {
+  "file": "31-page.js",
+  "title": "PAGES — Dashboard",
+  "lines": 256
+ },
+ {
+  "file": "32-ai-assistant.js",
+  "title": "AI ASSISTANT (placeholder UI — функционалност ще се добави с истински AI backend)",
+  "lines": 3
+ },
+ {
+  "file": "33-ai-asistent-v2.js",
+  "title": "AI АСИСТЕНТ v2 — истински работещ, в два режима: 1) СЪРВЪРЕН — при работещ backend пита истинския AI",
+  "lines": 1115
+ },
+ {
+  "file": "34-page.js",
+  "title": "PAGES — Subject detail",
+  "lines": 132
+ },
+ {
+  "file": "35-page.js",
+  "title": "PAGES — Flashcards",
+  "lines": 245
+ },
+ {
+  "file": "36-page.js",
+  "title": "PAGES — Cases (казуси — разработени)",
+  "lines": 107
+ },
+ {
+  "file": "37-page.js",
+  "title": "PAGES — Exam setup (изпит и колоквиуми)",
+  "lines": 156
+ },
+ {
+  "file": "38-page.js",
+  "title": "PAGES — Conspect",
+  "lines": 506
+ },
+ {
+  "file": "39-page.js",
+  "title": "PAGES — Quiz",
+  "lines": 321
+ },
+ {
+  "file": "40-page.js",
+  "title": "PAGES — Plan Builder",
+  "lines": 258
+ },
+ {
+  "file": "41-page.js",
+  "title": "PAGES — Review (SRS)",
+  "lines": 196
+ },
+ {
+  "file": "42-page.js",
+  "title": "PAGES — Exam draw (Тегли билет — setup)",
+  "lines": 83
+ },
+ {
+  "file": "43-page.js",
+  "title": "PAGES — Exam draw run (timed simulation)",
+  "lines": 148
+ },
+ {
+  "file": "44-page.js",
+  "title": "PAGES — Admin panel",
+  "lines": 884
+ },
+ {
+  "file": "45-page.js",
+  "title": "PAGES — Settings (account, password, email, GDPR)",
+  "lines": 143
+ },
+ {
+  "file": "46-page.js",
+  "title": "PAGES — Customer Support",
+  "lines": 71
+ },
+ {
+  "file": "47-page.js",
+  "title": "PAGES — Privacy Policy",
+  "lines": 79
+ },
+ {
+  "file": "48-page.js",
+  "title": "PAGES — Terms of Service",
+  "lines": 646
+ },
+ {
+  "file": "49-page.js",
+  "title": "PAGES — FAQ",
+  "lines": 35
+ },
+ {
+  "file": "50-page.js",
+  "title": "PAGES — Pricing",
+  "lines": 82
+ },
+ {
+  "file": "51-cookie-consent-banner.js",
+  "title": "COOKIE CONSENT BANNER",
+  "lines": 30
+ },
+ {
+  "file": "52-user-menu-dropdown.js",
+  "title": "USER MENU DROPDOWN",
+  "lines": 3
+ },
+ {
+  "file": "53-onboarding-tour.js",
+  "title": "ONBOARDING TOUR",
+  "lines": 54
+ },
+ {
+  "file": "54-page.js",
+  "title": "PAGES — Global Search",
+  "lines": 91
+ },
+ {
+  "file": "55-page.js",
+  "title": "PAGES — Notes overview for a subject",
+  "lines": 55
+ },
+ {
+  "file": "56-404.js",
+  "title": "404",
+  "lines": 16
+ },
+ {
+  "file": "57-v4-upgrades.js",
+  "title": "v4 UPGRADES — Theme, Streak, Achievements, Command Palette, Pomodoro, Focus",
+  "lines": 446
+ }
+]

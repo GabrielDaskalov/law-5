@@ -1,0 +1,1457 @@
+{
+ "00-seed.js": {
+  "exports": [
+   "SUBJECTS"
+  ],
+  "imports": {}
+ },
+ "01-seed.js": {
+  "exports": [
+   "FLASHCARDS",
+   "getFlashcards"
+  ],
+  "imports": {
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "02-seed.js": {
+  "exports": [
+   "QUIZZES"
+  ],
+  "imports": {}
+ },
+ "03-conspect-content.js": {
+  "exports": [
+   "CONSPECT_CONTENT"
+  ],
+  "imports": {}
+ },
+ "04-glossary.js": {
+  "exports": [
+   "LEGAL_GLOSSARY",
+   "__gtermPopupCloser",
+   "getConspect",
+   "highlightGlossary",
+   "showGlossaryPopup"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "escapeHtml"
+   ],
+   "03-conspect-content.js": [
+    "CONSPECT_CONTENT"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "05-case-studies.js": {
+  "exports": [
+   "CASE_CONTENT",
+   "getCases",
+   "getQuiz"
+  ],
+  "imports": {
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "02-seed.js": [
+    "QUIZZES"
+   ]
+  }
+ },
+ "06-state.js": {
+  "exports": [
+   "DEFAULT_STATE_JSON",
+   "STATE_KEY",
+   "loadState"
+  ],
+  "imports": {}
+ },
+ "07-profili.js": {
+  "exports": [
+   "PROFILE_KEYS",
+   "activateProfile",
+   "currentProfileId",
+   "snapshotProfile"
+  ],
+  "imports": {
+   "06-state.js": [
+    "DEFAULT_STATE_JSON",
+    "STATE_KEY",
+    "loadState"
+   ]
+  }
+ },
+ "08-tetradka-na-greshkite.js": {
+  "exports": [
+   "clearMistake",
+   "copyTopicLink",
+   "eurToBgn",
+   "getMistakes",
+   "isBookmarked",
+   "mistakesCount",
+   "recordMistake",
+   "subjMistakes",
+   "toggleBookmark"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "toast"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "09-backend-integraciya.js": {
+  "exports": [
+   "PA_BACKEND",
+   "PA_BACKEND_URL",
+   "apiFetch",
+   "authSubmit",
+   "backendPostLogin",
+   "backendReady",
+   "getJwt",
+   "saveState",
+   "scheduleStateSync",
+   "setJwt",
+   "switchProfile"
+  ],
+  "imports": {
+   "24-lokalni-akaunti.js": [
+    "LocalAuth",
+    "login"
+   ],
+   "10-helpers.js": [
+    "toast"
+   ],
+   "07-profili.js": [
+    "activateProfile",
+    "currentProfileId",
+    "snapshotProfile"
+   ],
+   "06-state.js": [
+    "DEFAULT_STATE_JSON",
+    "STATE_KEY",
+    "loadState"
+   ]
+  }
+ },
+ "10-helpers.js": {
+  "exports": [
+   "$",
+   "$$",
+   "el",
+   "escapeHtml",
+   "isLoggedIn",
+   "ownsSubject",
+   "pillForYear",
+   "progressOf",
+   "ringSvg",
+   "toast",
+   "updateNav"
+  ],
+  "imports": {
+   "14-data-service.js": [
+    "isAdmin"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "11-topic-progress-streak-theme.js": {
+  "exports": [
+   "currentStreak",
+   "isActiveDay",
+   "isTopicDone",
+   "markTopicDone",
+   "markTopicUndone",
+   "recordActivity",
+   "setLastTopic",
+   "todayStr",
+   "topicsDoneCount"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "12-srs.js": {
+  "exports": [
+   "SRS_DAY_MS",
+   "SRS_DEFAULT_NEW_PER_DAY",
+   "SRS_MAX_IVL",
+   "cardId",
+   "srsBuildQueue",
+   "srsConfigFor",
+   "srsGrade",
+   "srsHumanIvl",
+   "srsInit",
+   "srsResetToday",
+   "srsStats",
+   "srsTodayCount"
+  ],
+  "imports": {
+   "11-topic-progress-streak-theme.js": [
+    "recordActivity",
+    "todayStr"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "17-feature.js": [
+    "updateTopicProgress"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "13-exam-draw.js": {
+  "exports": [
+   "examDrawHistoryFor",
+   "examDrawPick",
+   "examDrawSaveAttempt"
+  ],
+  "imports": {
+   "11-topic-progress-streak-theme.js": [
+    "isTopicDone",
+    "recordActivity"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "14-data-service.js": {
+  "exports": [
+   "ADMIN_EMAILS",
+   "Activity",
+   "ContentStore",
+   "Users",
+   "isAdmin"
+  ],
+  "imports": {
+   "05-case-studies.js": [
+    "CASE_CONTENT"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "24-lokalni-akaunti.js": [
+    "LocalAuth"
+   ]
+  }
+ },
+ "15-api.js": {
+  "exports": [
+   "API",
+   "API_BASE",
+   "fmtBytes",
+   "localStorageSize"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "06-state.js": [
+    "STATE_KEY"
+   ]
+  }
+ },
+ "16-feature.js": {
+  "exports": [
+   "getVideo",
+   "markVideoWatched",
+   "setVideo",
+   "videoEmbedUrl",
+   "videoIsEmbed"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "17-feature.js": [
+    "updateTopicProgress"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ]
+  }
+ },
+ "17-feature.js": {
+  "exports": [
+   "ACTIVITY_KEYS",
+   "getTopicProgress",
+   "nextRecommendation",
+   "topicActivitiesComplete",
+   "updateTopicProgress"
+  ],
+  "imports": {
+   "16-feature.js": [
+    "getVideo"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "markTopicDone"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "18-feature.js": {
+  "exports": [
+   "addNote",
+   "allNotesForSubject",
+   "deleteNote",
+   "getNotes",
+   "updateNote"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ]
+  }
+ },
+ "19-feature.js": {
+  "exports": [
+   "applyTheme",
+   "computeAchievements",
+   "searchAll",
+   "toggleTheme"
+  ],
+  "imports": {
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "10-helpers.js": [
+    "escapeHtml",
+    "ownsSubject",
+    "toast"
+   ],
+   "04-glossary.js": [
+    "getConspect"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "05-case-studies.js": [
+    "getCases",
+    "getQuiz"
+   ],
+   "18-feature.js": [
+    "allNotesForSubject"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "currentStreak"
+   ]
+  }
+ },
+ "20-exam-colloquium-config.js": {
+  "exports": [
+   "daysUntil",
+   "formatDate",
+   "getEvents",
+   "getExamConfig",
+   "getNextEventGlobal",
+   "setExamConfig"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "21-file-uploads.js": {
+  "exports": [
+   "deleteFile",
+   "fileExt",
+   "formatBytes",
+   "getFiles",
+   "uploadFile"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "22-plan-generator.js": {
+  "exports": [
+   "generatePlan"
+  ],
+  "imports": {
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "20-exam-colloquium-config.js": [
+    "daysUntil"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "23-auth.js": {
+  "exports": [],
+  "imports": {}
+ },
+ "24-lokalni-akaunti.js": {
+  "exports": [
+   "LocalAuth",
+   "completeMockPurchase",
+   "login",
+   "logout",
+   "purchaseSubject",
+   "renderExamPicker",
+   "renderForgotPassword",
+   "renderMistakes",
+   "renderMistakesReview",
+   "renderMockCheckout",
+   "renderResetPassword",
+   "submitForgotPassword",
+   "submitResetPassword"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "apiFetch",
+    "backendReady",
+    "getJwt",
+    "saveState",
+    "setJwt",
+    "switchProfile"
+   ],
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast",
+    "updateNav"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "clearMistake",
+    "eurToBgn",
+    "getMistakes",
+    "mistakesCount",
+    "recordMistake"
+   ]
+  }
+ },
+ "25-router.js": {
+  "exports": [
+   "router"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "toast",
+    "updateNav"
+   ],
+   "27-page.js": [
+    "renderLanding"
+   ],
+   "28-page.js": [
+    "renderPackages"
+   ],
+   "29-page.js": [
+    "renderAbout",
+    "renderContact"
+   ],
+   "30-page.js": [
+    "renderLogin",
+    "renderRegister"
+   ],
+   "31-page.js": [
+    "renderDashboard"
+   ],
+   "40-page.js": [
+    "renderPlan"
+   ],
+   "34-page.js": [
+    "renderSubject"
+   ],
+   "35-page.js": [
+    "renderFlashcards"
+   ],
+   "38-page.js": [
+    "renderConspect"
+   ],
+   "36-page.js": [
+    "renderCases"
+   ],
+   "37-page.js": [
+    "renderExamSetup"
+   ],
+   "43-page.js": [
+    "renderExamDrawRun"
+   ],
+   "42-page.js": [
+    "renderExamDraw"
+   ],
+   "41-page.js": [
+    "renderReview"
+   ],
+   "39-page.js": [
+    "renderQuiz"
+   ],
+   "44-page.js": [
+    "renderAdmin"
+   ],
+   "45-page.js": [
+    "renderSettings"
+   ],
+   "46-page.js": [
+    "renderSupport"
+   ],
+   "47-page.js": [
+    "renderPrivacy"
+   ],
+   "48-page.js": [
+    "renderTerms"
+   ],
+   "49-page.js": [
+    "renderFAQ"
+   ],
+   "50-page.js": [
+    "renderPricing"
+   ],
+   "54-page.js": [
+    "renderSearch"
+   ],
+   "55-page.js": [
+    "renderNotesForSubject"
+   ],
+   "57-v4-upgrades.js": [
+    "renderAchievementsPage",
+    "renderStreakPage"
+   ],
+   "24-lokalni-akaunti.js": [
+    "renderExamPicker",
+    "renderForgotPassword",
+    "renderMistakes",
+    "renderMistakesReview",
+    "renderMockCheckout",
+    "renderResetPassword"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "06-state.js": [
+    "loadState"
+   ],
+   "19-feature.js": [
+    "applyTheme"
+   ],
+   "09-backend-integraciya.js": [
+    "backendPostLogin",
+    "backendReady",
+    "getJwt"
+   ],
+   "26-content-protection.js": [
+    "setupContentProtection"
+   ],
+   "51-cookie-consent-banner.js": [
+    "maybeShowCookieBanner"
+   ],
+   "53-onboarding-tour.js": [
+    "maybeShowOnboarding"
+   ]
+  }
+ },
+ "26-content-protection.js": {
+  "exports": [
+   "setupContentProtection",
+   "showCopyShield",
+   "userWatermarkText",
+   "watermarkSvg"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "27-page.js": {
+  "exports": [
+   "iconSvg",
+   "renderLanding"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "el"
+   ]
+  }
+ },
+ "28-page.js": {
+  "exports": [
+   "packageCard",
+   "renderPackages",
+   "tryFreeCards"
+  ],
+  "imports": {
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "eurToBgn"
+   ],
+   "10-helpers.js": [
+    "$",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ]
+  }
+ },
+ "29-page.js": {
+  "exports": [
+   "renderAbout",
+   "renderContact"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "30-page.js": {
+  "exports": [
+   "renderLogin",
+   "renderRegister"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "31-page.js": {
+  "exports": [
+   "getDateString",
+   "renderDashboard"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "currentStreak",
+    "isActiveDay",
+    "recordActivity",
+    "topicsDoneCount"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "20-exam-colloquium-config.js": [
+    "formatDate",
+    "getEvents",
+    "getNextEventGlobal"
+   ],
+   "04-glossary.js": [
+    "getConspect"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "19-feature.js": [
+    "computeAchievements"
+   ],
+   "27-page.js": [
+    "iconSvg"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "mistakesCount"
+   ],
+   "33-ai-asistent-v2.js": [
+    "aiBubbleHTML",
+    "emptyDashboard",
+    "quickTool",
+    "setupAIBubble",
+    "subjectCard"
+   ],
+   "17-feature.js": [
+    "nextRecommendation"
+   ]
+  }
+ },
+ "32-ai-assistant.js": {
+  "exports": [],
+  "imports": {}
+ },
+ "33-ai-asistent-v2.js": {
+  "exports": [
+   "AI_LAWS",
+   "AI_STOP",
+   "PA_API_URL",
+   "__aiFull",
+   "__aiIdx",
+   "__aiScope",
+   "aiAnswerArticle",
+   "aiAnswerCase",
+   "aiAnswerCompare",
+   "aiAnswerExplain",
+   "aiAnswerWeakSpots",
+   "aiBubbleHTML",
+   "aiCaseHtml",
+   "aiChatLog",
+   "aiContextSuggestions",
+   "aiCurrentSubject",
+   "aiDefinitionFor",
+   "aiDetectScope",
+   "aiFindCard",
+   "aiFindCase",
+   "aiFormat",
+   "aiFullIndex",
+   "aiHighlight",
+   "aiHistoryForServer",
+   "aiInScope",
+   "aiIndex",
+   "aiLocalAnswer",
+   "aiMatchSubject",
+   "aiMatchTopics",
+   "aiMatcherKey",
+   "aiOralNext",
+   "aiParseCompare",
+   "aiPushRaw",
+   "aiQuizNext",
+   "aiRandomCase",
+   "aiRenderSuggestions",
+   "aiRestoreChat",
+   "aiSentences",
+   "aiServerAsk",
+   "aiServerContext",
+   "aiStem",
+   "aiStrip",
+   "aiSubjName",
+   "aiTermMatcher",
+   "aiTok",
+   "aiTopicText",
+   "aiTopicsForTerm",
+   "aiTryInteractive",
+   "aiTypeInto",
+   "aiTypingIndicator",
+   "aiUpdateStatus",
+   "aiWelcomeHTML",
+   "emptyDashboard",
+   "quickTool",
+   "setupAIBubble",
+   "subjectCard"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "PA_BACKEND_URL",
+    "backendReady",
+    "getJwt",
+    "saveState"
+   ],
+   "10-helpers.js": [
+    "$",
+    "el",
+    "escapeHtml",
+    "progressOf",
+    "ringSvg"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "getMistakes",
+    "recordMistake"
+   ],
+   "27-page.js": [
+    "iconSvg"
+   ]
+  }
+ },
+ "34-page.js": {
+  "exports": [
+   "renderSubject"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "isLoggedIn",
+    "ownsSubject",
+    "progressOf"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "35-page.js": [
+    "FREE_CARDS_LIMIT"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "subjMistakes"
+   ],
+   "20-exam-colloquium-config.js": [
+    "formatDate",
+    "getEvents"
+   ],
+   "04-glossary.js": [
+    "getConspect"
+   ],
+   "05-case-studies.js": [
+    "getCases"
+   ],
+   "27-page.js": [
+    "iconSvg"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "12-srs.js": [
+    "srsTodayCount"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "isTopicDone",
+    "topicsDoneCount"
+   ],
+   "33-ai-asistent-v2.js": [
+    "aiBubbleHTML",
+    "setupAIBubble"
+   ]
+  }
+ },
+ "35-page.js": {
+  "exports": [
+   "FREE_CARDS_LIMIT",
+   "renderFlashcards"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "el",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "27-page.js": [
+    "iconSvg"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "36-page.js": {
+  "exports": [
+   "caseCard",
+   "renderCases"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "05-case-studies.js": [
+    "getCases"
+   ]
+  }
+ },
+ "37-page.js": {
+  "exports": [
+   "renderExamSetup"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "20-exam-colloquium-config.js": [
+    "daysUntil",
+    "getExamConfig",
+    "setExamConfig"
+   ],
+   "27-page.js": [
+    "iconSvg"
+   ]
+  }
+ },
+ "38-page.js": {
+  "exports": [
+   "renderConspect",
+   "renderInlineQuiz",
+   "renderLatinDict"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "el",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "04-glossary.js": [
+    "getConspect",
+    "highlightGlossary"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "isTopicDone",
+    "markTopicDone",
+    "markTopicUndone",
+    "recordActivity",
+    "setLastTopic",
+    "topicsDoneCount"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "01-seed.js": [
+    "getFlashcards"
+   ],
+   "05-case-studies.js": [
+    "getQuiz"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "isBookmarked"
+   ],
+   "26-content-protection.js": [
+    "userWatermarkText",
+    "watermarkSvg"
+   ],
+   "16-feature.js": [
+    "getVideo",
+    "markVideoWatched",
+    "setVideo",
+    "videoEmbedUrl",
+    "videoIsEmbed"
+   ],
+   "14-data-service.js": [
+    "isAdmin"
+   ],
+   "17-feature.js": [
+    "getTopicProgress",
+    "updateTopicProgress"
+   ],
+   "18-feature.js": [
+    "addNote",
+    "deleteNote",
+    "getNotes"
+   ],
+   "33-ai-asistent-v2.js": [
+    "aiBubbleHTML",
+    "setupAIBubble"
+   ],
+   "25-router.js": [
+    "router"
+   ]
+  }
+ },
+ "39-page.js": {
+  "exports": [
+   "renderQuiz"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "el",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "05-case-studies.js": [
+    "getQuiz"
+   ],
+   "08-tetradka-na-greshkite.js": [
+    "recordMistake"
+   ]
+  }
+ },
+ "40-page.js": {
+  "exports": [
+   "renderPlan",
+   "renderPlanView"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "$$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "20-exam-colloquium-config.js": [
+    "daysUntil",
+    "formatDate",
+    "getEvents",
+    "getExamConfig"
+   ],
+   "22-plan-generator.js": [
+    "generatePlan"
+   ]
+  }
+ },
+ "41-page.js": {
+  "exports": [
+   "renderReview"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "12-srs.js": [
+    "SRS_DEFAULT_NEW_PER_DAY",
+    "srsBuildQueue",
+    "srsConfigFor",
+    "srsGrade",
+    "srsHumanIvl",
+    "srsStats"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ]
+  }
+ },
+ "42-page.js": {
+  "exports": [
+   "renderExamDraw"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "13-exam-draw.js": [
+    "examDrawHistoryFor",
+    "examDrawPick"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "topicsDoneCount"
+   ]
+  }
+ },
+ "43-page.js": {
+  "exports": [
+   "renderExamDrawRun"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "04-glossary.js": [
+    "getConspect"
+   ],
+   "13-exam-draw.js": [
+    "examDrawSaveAttempt"
+   ]
+  }
+ },
+ "44-page.js": {
+  "exports": [
+   "adminContentCounts",
+   "adminSrsTotals",
+   "renderAdmin",
+   "renderAdminContent",
+   "renderAdminOverview",
+   "renderAdminProgress",
+   "renderAdminSales",
+   "renderAdminSupport",
+   "renderAdminSystem",
+   "renderAdminUsers",
+   "showAdminEditModal"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "el",
+    "escapeHtml",
+    "isLoggedIn",
+    "toast"
+   ],
+   "14-data-service.js": [
+    "Activity",
+    "ContentStore",
+    "Users",
+    "isAdmin"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "12-srs.js": [
+    "cardId",
+    "srsHumanIvl",
+    "srsStats",
+    "srsTodayCount"
+   ],
+   "09-backend-integraciya.js": [
+    "apiFetch",
+    "backendReady",
+    "saveState"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "currentStreak",
+    "isActiveDay",
+    "todayStr"
+   ],
+   "24-lokalni-akaunti.js": [
+    "LocalAuth"
+   ],
+   "15-api.js": [
+    "fmtBytes",
+    "localStorageSize"
+   ],
+   "06-state.js": [
+    "STATE_KEY"
+   ]
+  }
+ },
+ "45-page.js": {
+  "exports": [
+   "renderSettings"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "toast",
+    "updateNav"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "15-api.js": [
+    "API"
+   ],
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ],
+   "11-topic-progress-streak-theme.js": [
+    "todayStr"
+   ]
+  }
+ },
+ "46-page.js": {
+  "exports": [
+   "renderSupport"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "toast"
+   ],
+   "15-api.js": [
+    "API"
+   ]
+  }
+ },
+ "47-page.js": {
+  "exports": [
+   "renderPrivacy"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "48-page.js": {
+  "exports": [
+   "renderTerms"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "49-page.js": {
+  "exports": [
+   "renderFAQ"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml"
+   ]
+  }
+ },
+ "50-page.js": {
+  "exports": [
+   "renderPricing"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml"
+   ]
+  }
+ },
+ "51-cookie-consent-banner.js": {
+  "exports": [
+   "maybeShowCookieBanner"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "14-data-service.js": [
+    "Activity"
+   ]
+  }
+ },
+ "52-user-menu-dropdown.js": {
+  "exports": [],
+  "imports": {}
+ },
+ "53-onboarding-tour.js": {
+  "exports": [
+   "ONBOARDING_STEPS",
+   "maybeShowOnboarding",
+   "showOnboarding",
+   "toggleUserMenu"
+  ],
+  "imports": {
+   "09-backend-integraciya.js": [
+    "saveState"
+   ],
+   "10-helpers.js": [
+    "escapeHtml",
+    "isLoggedIn",
+    "toast"
+   ]
+  }
+ },
+ "54-page.js": {
+  "exports": [
+   "renderSearch"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "19-feature.js": [
+    "searchAll"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ },
+ "55-page.js": {
+  "exports": [
+   "renderNotesForSubject"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$",
+    "escapeHtml",
+    "isLoggedIn",
+    "ownsSubject"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ],
+   "56-404.js": [
+    "render404"
+   ],
+   "18-feature.js": [
+    "allNotesForSubject",
+    "deleteNote"
+   ]
+  }
+ },
+ "56-404.js": {
+  "exports": [
+   "render404"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "$"
+   ]
+  }
+ },
+ "57-v4-upgrades.js": {
+  "exports": [
+   "ACHIEVEMENTS",
+   "POMO_BREAK",
+   "POMO_WORK",
+   "_origRoute",
+   "bumpStreak",
+   "checkAchievements",
+   "closeCmdPalette",
+   "cmdItems",
+   "cmdKey",
+   "cmdSel",
+   "dayDiff",
+   "deferredPrompt",
+   "getCmdItems",
+   "getStreak",
+   "getUnlockedAch",
+   "hidePomoFab",
+   "initTheme",
+   "openCmdPalette",
+   "pomoData",
+   "pomoFinish",
+   "pomoPause",
+   "pomoReset",
+   "pomoStart",
+   "pomoState",
+   "pwaInstall",
+   "renderAchievementsGrid",
+   "renderAchievementsPage",
+   "renderCmdResults",
+   "renderCmdSelection",
+   "renderHeatmap",
+   "renderStreakPage",
+   "runCmd",
+   "showAchToast",
+   "showPomoFab",
+   "todayKey",
+   "toggleFocusMode",
+   "togglePomo",
+   "toggleTheme",
+   "updateCmdResults",
+   "updatePomoDisplay",
+   "updateStreakChip"
+  ],
+  "imports": {
+   "10-helpers.js": [
+    "el",
+    "isLoggedIn",
+    "toast"
+   ],
+   "00-seed.js": [
+    "SUBJECTS"
+   ]
+  }
+ }
+}

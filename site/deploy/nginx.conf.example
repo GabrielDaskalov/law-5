@@ -1,0 +1,55 @@
+# Примерна конфигурация за nginx.
+#
+# Две неща, които трябва да са верни:
+#   1) /api и /health отиват към backend-а (Node), останалото е статика;
+#   2) index.html НЕ се кешира, а файловете с хеш в името се кешират дълго.
+#      Vite слага хеш при всяко сглобяване, затова старият файл никога не се
+#      сервира вместо новия.
+
+server {
+  listen 80;
+  server_name lawplus.bg www.lawplus.bg;
+  # В production: пренасочване към https + сертификат (certbot).
+
+  root /var/www/lawplus/dist;
+  index index.html;
+
+  # Съдържанието се тегли по време на работа — компресията има значение.
+  gzip on;
+  gzip_types text/css application/javascript application/json text/plain;
+  gzip_min_length 1024;
+
+  # Сглобените файлове носят хеш в името → могат да се кешират завинаги.
+  location /assets/ {
+    expires 1y;
+    add_header Cache-Control "public, immutable";
+    try_files $uri =404;
+  }
+
+  # Входната страница се проверява всеки път — иначе браузърът показва
+  # стара версия след ново качване.
+  location = /index.html {
+    add_header Cache-Control "no-cache";
+  }
+
+  location /api/ {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    # Дългите заявки (внос на партиди) не бива да се прекъсват.
+    proxy_read_timeout 120s;
+    client_max_body_size 25m;
+  }
+
+  location /health {
+    proxy_pass http://127.0.0.1:3000;
+  }
+
+  # Маршрутите са след # (hash routing), затова всичко останало е index.html.
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+}
