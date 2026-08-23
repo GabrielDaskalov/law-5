@@ -1,0 +1,61 @@
+# ============================================================
+# ⚠️  САМО ЗА ЛОКАЛНА РАЗРАБОТКА — НЕ ГО ПОЛЗВАЙ НА СЪРВЪР!
+#
+# Тук API-то върви с `npm run dev` (hot reload), кодът е монтиран от
+# хоста и няма nginx, HTTPS, Redis и rate limit.
+# За production: docker-compose.prod.yml
+#
+# Преди стартиране си направи `.env` файл в тази папка:
+#   DB_PASSWORD=$(openssl rand -hex 16)
+#   JWT_SECRET=$(openssl rand -hex 32)
+# Без тях `docker compose up` спира с ясна грешка — нарочно, за да не
+# тръгне никога с познати пароли по подразбиране.
+# ============================================================
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: pravo-academy-db
+    environment:
+      POSTGRES_DB: pravo_academy
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD е задължителен}
+    ports:
+      # Само на localhost! Без "127.0.0.1:" Docker отваря порта на ВСИЧКИ
+      # интерфейси и заобикаля firewall-а (ufw не вижда DOCKER вериги).
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: pravo-academy-api
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: pravo_academy
+      DB_USER: postgres
+      DB_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD е задължителен}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET е задължителен}
+      CORS_ORIGIN: http://localhost:5173
+    ports:
+      # Само на localhost — виж коментара при базата.
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+
+volumes:
+  postgres_data:
