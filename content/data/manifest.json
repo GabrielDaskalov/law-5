@@ -1,0 +1,166 @@
+{
+  "generatedFrom": "pravo-academy-data.js",
+  "subjects": {
+    "aprc": {
+      "bytes": 758991,
+      "sha256": "19880cf8a2230a84",
+      "topics": 36,
+      "conspects": 36,
+      "flashcards": 203,
+      "quizzes": 36,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 36,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "krim": {
+      "bytes": 523504,
+      "sha256": "070d9a6868c4acb8",
+      "topics": 50,
+      "conspects": 50,
+      "flashcards": 59,
+      "quizzes": 49,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 49,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "nip": {
+      "bytes": 170061,
+      "sha256": "993b40a9c67b60e2",
+      "topics": 25,
+      "conspects": 25,
+      "flashcards": 25,
+      "quizzes": 24,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 24,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "np": {
+      "bytes": 3256737,
+      "sha256": "5c138ad3f4b35f96",
+      "topics": 64,
+      "conspects": 64,
+      "flashcards": 320,
+      "quizzes": 640,
+      "cases": 128,
+      "quizKinds": {
+        "mcq": 640,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "oblp": {
+      "bytes": 2647490,
+      "sha256": "8fc578241dd9431a",
+      "topics": 75,
+      "conspects": 64,
+      "flashcards": 449,
+      "quizzes": 750,
+      "cases": 150,
+      "quizKinds": {
+        "mcq": 750,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "pds": {
+      "bytes": 223424,
+      "sha256": "2f2116ccfb818d32",
+      "topics": 23,
+      "conspects": 23,
+      "flashcards": 29,
+      "quizzes": 23,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 23,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "se": {
+      "bytes": 340773,
+      "sha256": "c2e9fdf55521ff6b",
+      "topics": 15,
+      "conspects": 15,
+      "flashcards": 21,
+      "quizzes": 15,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 15,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "nk": {
+      "bytes": 2952324,
+      "sha256": "d9f4da7549956ff3",
+      "topics": 78,
+      "conspects": 78,
+      "flashcards": 390,
+      "quizzes": 780,
+      "cases": 156,
+      "quizKinds": {
+        "mcq": 780,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "gpob": {
+      "bytes": 2032065,
+      "sha256": "5f1714dec7daa625",
+      "topics": 63,
+      "conspects": 63,
+      "flashcards": 315,
+      "quizzes": 630,
+      "cases": 126,
+      "quizKinds": {
+        "mcq": 630,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "lat": {
+      "bytes": 855934,
+      "sha256": "552fd5ff2cf0156f",
+      "topics": 15,
+      "conspects": 15,
+      "flashcards": 491,
+      "quizzes": 982,
+      "cases": 0,
+      "quizKinds": {
+        "mcq": 0,
+        "fill": 982
+      },
+      "flashcardsWithoutTopic": 0
+    },
+    "krb": {
+      "bytes": 1936981,
+      "sha256": "1f74511aeeadfca5",
+      "topics": 65,
+      "conspects": 65,
+      "flashcards": 325,
+      "quizzes": 650,
+      "cases": 130,
+      "quizKinds": {
+        "mcq": 650,
+        "fill": 0
+      },
+      "flashcardsWithoutTopic": 0
+    }
+  },
+  "totals": {
+    "topics": 509,
+    "conspects": 498,
+    "flashcards": 2627,
+    "quizzes": 4579,
+    "cases": 690
+  }
+}

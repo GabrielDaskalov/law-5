@@ -1,0 +1,348 @@
+[
+  {
+    "code": "ibdp",
+    "slug": "istoriya-na-balgarskata-darzhava-i-pravo",
+    "title": "История на българската държава и право",
+    "tagline": "От Първото царство до съвременна Република.",
+    "year": 1,
+    "featured": false,
+    "order_index": 12,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "krb",
+    "slug": "konstitutsionno-pravo-na-rb",
+    "title": "Конституционно право на РБ",
+    "tagline": "Държавно устройство, основни права, контрол.",
+    "year": 1,
+    "featured": true,
+    "order_index": 10,
+    "counts": {
+      "topics": 65,
+      "conspects": 65,
+      "flashcards": 325,
+      "quizzes": 650,
+      "cases": 130
+    }
+  },
+  {
+    "code": "lat",
+    "slug": "latinski-ezik-za-yuristi",
+    "title": "Латински език за юристи",
+    "tagline": "Двупосочен превод: латински ↔ български с попълване на думи.",
+    "year": 1,
+    "featured": false,
+    "order_index": 9,
+    "counts": {
+      "topics": 15,
+      "conspects": 15,
+      "flashcards": 491,
+      "quizzes": 982,
+      "cases": 0
+    }
+  },
+  {
+    "code": "otp",
+    "slug": "obshta-teoriya-na-pravoto",
+    "title": "Обща теория на правото",
+    "tagline": "Методология, тълкуване, аксиология.",
+    "year": 1,
+    "featured": false,
+    "order_index": 13,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "rpp",
+    "slug": "rimsko-chastno-pravo",
+    "title": "Римско частно право",
+    "tagline": "Институции на Гай, владение, сервитути.",
+    "year": 1,
+    "featured": false,
+    "order_index": 11,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "apr",
+    "slug": "administrativno-pravo",
+    "title": "Административно право",
+    "tagline": "Актове, производство, контрол.",
+    "year": 2,
+    "featured": false,
+    "order_index": 15,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "aps",
+    "slug": "administrativno-pravo-spetsialna-chast",
+    "title": "Административно право — специална част",
+    "tagline": "Отраслови режими: полиция, устройство, образование, здравеопазване.",
+    "year": 2,
+    "featured": false,
+    "order_index": 16,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "vp",
+    "slug": "veshtno-pravo",
+    "title": "Вещно право",
+    "tagline": "Собственост, владение, ипотека, кадастър, ЗУТ.",
+    "year": 2,
+    "featured": true,
+    "order_index": 14,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "gpob",
+    "slug": "grazhdansko-pravo-obshta-chast",
+    "title": "Гражданско право — обща част",
+    "tagline": "Лица, сделки, представителство, давност.",
+    "year": 2,
+    "featured": true,
+    "order_index": 8,
+    "counts": {
+      "topics": 63,
+      "conspects": 63,
+      "flashcards": 315,
+      "quizzes": 630,
+      "cases": 126
+    }
+  },
+  {
+    "code": "mpp",
+    "slug": "mezhdunarodno-publichno-pravo",
+    "title": "Международно публично право",
+    "tagline": "Договори, държави, ООН.",
+    "year": 2,
+    "featured": false,
+    "order_index": 18,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "eul",
+    "slug": "pravo-na-evropeyskiya-sayuz",
+    "title": "Право на Европейския съюз",
+    "tagline": "ДЕС, ДФЕС, СЕС, директиви, основни свободи.",
+    "year": 2,
+    "featured": false,
+    "order_index": 17,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "fp",
+    "slug": "finansovo-pravo",
+    "title": "Финансово право",
+    "tagline": "Бюджет, данъци, банково.",
+    "year": 2,
+    "featured": false,
+    "order_index": 19,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "le",
+    "slug": "yuridicheski-angliyski",
+    "title": "Юридически английски",
+    "tagline": "Legal terminology, contracts, EU law texts.",
+    "year": 2,
+    "featured": false,
+    "order_index": 20,
+    "counts": {
+      "topics": 0,
+      "conspects": 0,
+      "flashcards": 0,
+      "quizzes": 0,
+      "cases": 0
+    },
+    "contentPending": true
+  },
+  {
+    "code": "aprc",
+    "slug": "administrativen-protses",
+    "title": "Административен процес",
+    "tagline": "АПК, индивидуални актове, обжалване, ЗАНН.",
+    "year": 3,
+    "featured": false,
+    "order_index": 0,
+    "counts": {
+      "topics": 36,
+      "conspects": 36,
+      "flashcards": 203,
+      "quizzes": 36,
+      "cases": 0
+    }
+  },
+  {
+    "code": "krim",
+    "slug": "kriminalistika",
+    "title": "Криминалистика",
+    "tagline": "Следи, експертизи, разследване, разпит.",
+    "year": 3,
+    "featured": false,
+    "order_index": 1,
+    "counts": {
+      "topics": 50,
+      "conspects": 50,
+      "flashcards": 59,
+      "quizzes": 49,
+      "cases": 0
+    }
+  },
+  {
+    "code": "np",
+    "slug": "nakazatelen-protses",
+    "title": "Наказателен процес",
+    "tagline": "Досъдебно, съдебно, обжалване, особени производства.",
+    "year": 3,
+    "featured": true,
+    "order_index": 3,
+    "counts": {
+      "topics": 64,
+      "conspects": 64,
+      "flashcards": 320,
+      "quizzes": 640,
+      "cases": 128
+    }
+  },
+  {
+    "code": "nip",
+    "slug": "nakazatelno-izpalnitelno-pravo",
+    "title": "Наказателно изпълнително право",
+    "tagline": "ЗИНЗС, лишаване от свобода, режими, освобождаване.",
+    "year": 3,
+    "featured": false,
+    "order_index": 2,
+    "counts": {
+      "topics": 25,
+      "conspects": 25,
+      "flashcards": 25,
+      "quizzes": 24,
+      "cases": 0
+    }
+  },
+  {
+    "code": "nk",
+    "slug": "nakazatelno-pravo",
+    "title": "Наказателно право",
+    "tagline": "Обща и особена част на НК — престъпление, наказание, състави.",
+    "year": 3,
+    "featured": true,
+    "order_index": 7,
+    "counts": {
+      "topics": 78,
+      "conspects": 78,
+      "flashcards": 390,
+      "quizzes": 780,
+      "cases": 156
+    }
+  },
+  {
+    "code": "oblp",
+    "slug": "obligatsionno-pravo",
+    "title": "Облигационно право",
+    "tagline": "Договори, изпълнение, неустойка, ипотека, продажба.",
+    "year": 3,
+    "featured": true,
+    "order_index": 4,
+    "counts": {
+      "topics": 75,
+      "conspects": 64,
+      "flashcards": 449,
+      "quizzes": 750,
+      "cases": 150
+    }
+  },
+  {
+    "code": "pds",
+    "slug": "pravo-na-darzhavnata-sluzhba",
+    "title": "Право на държавната служба",
+    "tagline": "ЗДСл, статут, служебно правоотношение, дисциплинарка.",
+    "year": 3,
+    "featured": false,
+    "order_index": 5,
+    "counts": {
+      "topics": 23,
+      "conspects": 23,
+      "flashcards": 29,
+      "quizzes": 23,
+      "cases": 0
+    }
+  },
+  {
+    "code": "se",
+    "slug": "sadebni-ekspertizi",
+    "title": "Съдебни експертизи",
+    "tagline": "НПК и ГПК — назначаване, видове, заключение.",
+    "year": 3,
+    "featured": false,
+    "order_index": 6,
+    "counts": {
+      "topics": 15,
+      "conspects": 15,
+      "flashcards": 21,
+      "quizzes": 15,
+      "cases": 0
+    }
+  }
+]
