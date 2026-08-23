@@ -1,0 +1,689 @@
+{
+  "info": {
+    "name": "Pravo Academy API",
+    "description": "Complete API collection for Pravo Academy platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@example.com\",\n  \"password\": \"password123\",\n  \"name\": \"Student Name\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/user",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "user"]
+            }
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"current_password\": \"password123\",\n  \"new_password\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/change-password",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "change-password"]
+            }
+          }
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"student@example.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/forgot-password",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "forgot-password"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subjects",
+      "item": [
+        {
+          "name": "List All Subjects",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/subjects?limit=10&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["subjects"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Subject",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/subjects/{subject_id}",
+              "host": ["{{base_url}}"],
+              "path": ["subjects", "{subject_id}"]
+            }
+          }
+        },
+        {
+          "name": "Get Subject Topics",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/subjects/{subject_id}/topics",
+              "host": ["{{base_url}}"],
+              "path": ["subjects", "{subject_id}", "topics"]
+            }
+          }
+        },
+        {
+          "name": "Get Subject Progress",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/subjects/{subject_id}/progress",
+              "host": ["{{base_url}}"],
+              "path": ["subjects", "{subject_id}", "progress"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Flashcards",
+      "item": [
+        {
+          "name": "List Flashcards",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/flashcards?subject_id=&topic_id=&difficulty=medium&limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["flashcards"],
+              "query": [
+                {
+                  "key": "subject_id",
+                  "value": ""
+                },
+                {
+                  "key": "topic_id",
+                  "value": ""
+                },
+                {
+                  "key": "difficulty",
+                  "value": "medium"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Flashcard",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/flashcards/{id}",
+              "host": ["{{base_url}}"],
+              "path": ["flashcards", "{id}"]
+            }
+          }
+        },
+        {
+          "name": "Create Flashcard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject_id\": \"subject-uuid\",\n  \"topic_id\": \"topic-uuid\",\n  \"question\": \"What is constitutional law?\",\n  \"answer\": \"Constitutional law is...\",\n  \"difficulty\": \"medium\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/flashcards",
+              "host": ["{{base_url}}"],
+              "path": ["flashcards"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quiz",
+      "item": [
+        {
+          "name": "Get Quizzes for Subject",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/quiz/subject/{subject_id}",
+              "host": ["{{base_url}}"],
+              "path": ["quiz", "subject", "{subject_id}"]
+            }
+          }
+        },
+        {
+          "name": "Get Quiz Questions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/quiz/{quiz_id}/questions",
+              "host": ["{{base_url}}"],
+              "path": ["quiz", "{quiz_id}", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Submit Quiz",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quiz_id\": \"quiz-uuid\",\n  \"answers\": {\n    \"question_1_id\": \"A\",\n    \"question_2_id\": \"B\",\n    \"question_3_id\": \"C\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/quiz/submit",
+              "host": ["{{base_url}}"],
+              "path": ["quiz", "submit"]
+            }
+          }
+        },
+        {
+          "name": "Get Quiz Results",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/quiz/{quiz_id}/results",
+              "host": ["{{base_url}}"],
+              "path": ["quiz", "{quiz_id}", "results"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Conspects",
+      "item": [
+        {
+          "name": "List Conspects",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/conspects?subject_id=&limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["conspects"],
+              "query": [
+                {
+                  "key": "subject_id",
+                  "value": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Conspect",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/conspects/{id}",
+              "host": ["{{base_url}}"],
+              "path": ["conspects", "{id}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lectures",
+      "item": [
+        {
+          "name": "List Lectures",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/lectures?subject_id=&limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["lectures"],
+              "query": [
+                {
+                  "key": "subject_id",
+                  "value": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Lecture",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/lectures/{id}",
+              "host": ["{{base_url}}"],
+              "path": ["lectures", "{id}"]
+            }
+          }
+        },
+        {
+          "name": "Get Lecture Chapters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/lectures/{id}/chapters",
+              "host": ["{{base_url}}"],
+              "path": ["lectures", "{id}", "chapters"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cases",
+      "item": [
+        {
+          "name": "List Cases",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/cases?subject_id=&topic_id=&limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["cases"],
+              "query": [
+                {
+                  "key": "subject_id",
+                  "value": ""
+                },
+                {
+                  "key": "topic_id",
+                  "value": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Case",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/cases/{id}",
+              "host": ["{{base_url}}"],
+              "path": ["cases", "{id}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Progress",
+      "item": [
+        {
+          "name": "Get User Progress",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/progress?content_type=&limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["progress"],
+              "query": [
+                {
+                  "key": "content_type",
+                  "value": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/progress/dashboard",
+              "host": ["{{base_url}}"],
+              "path": ["progress", "dashboard"]
+            }
+          }
+        },
+        {
+          "name": "Update Progress",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"completed\",\n  \"score\": 85\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/progress/{content_type}/{content_id}",
+              "host": ["{{base_url}}"],
+              "path": ["progress", "{content_type}", "{content_id}"]
+            }
+          }
+        },
+        {
+          "name": "Get Study Plan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/progress/study-plan",
+              "host": ["{{base_url}}"],
+              "path": ["progress", "study-plan"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/user/profile",
+              "host": ["{{base_url}}"],
+              "path": ["user", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Name\",\n  \"bio\": \"Law student from Sofia\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/profile",
+              "host": ["{{base_url}}"],
+              "path": ["user", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Update Preferences",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"theme\": \"dark\",\n  \"language\": \"bg\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/preferences",
+              "host": ["{{base_url}}"],
+              "path": ["user", "preferences"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "List Notifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifications?limit=20&offset=0",
+              "host": ["{{base_url}}"],
+              "path": ["notifications"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Mark as Read",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/notifications/{id}/read",
+              "host": ["{{base_url}}"],
+              "path": ["notifications", "{id}", "read"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
